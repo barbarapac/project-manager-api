@@ -4,7 +4,7 @@ Projeto final da disciplina de Arquitetura Node.js no curso de pós-graduação 
 
 ### Descrição
 
-O projeto final da disciplina consiste em desenvolver um produto de cgerenciamento de tarefas** como
+O projeto final da disciplina consiste em desenvolver um produto de **gerenciamento de tarefas** como
 mostra o desenho arquitetural de alto nível acima. Este projeto será subdividido em etapas, sendo:
 
 1. Setup do ambiente de desenvolvimento e modelagem inicial dos dados;
