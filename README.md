@@ -8,11 +8,17 @@ O projeto final da disciplina consiste em desenvolver um produto de **gerenciame
 mostra o desenho arquitetural de alto nível acima. Este projeto será subdividido em etapas, sendo:
 
 1. Setup do ambiente de desenvolvimento e modelagem inicial dos dados;
-2. Integração com banco de dados MySql usando o padrão DTO, Repository e TypeORM;
+2. Integração com banco de dados SQLite usando o padrão DTO, Repository e TypeORM;
 3. Autenticação e autorização com OAuth;
 4. GraphQL e Modelagem em microsserviços.
 
 ![alt text](image.png)
+
+### Tecnologias utilizadas:
+- Node.js
+    > Node.js é uma ambiente de execução de JavaScript disponível para várias plataformas, de código aberto e gratuita, que permite os programadores criar servidores, aplicações da Web, ferramentas de linha de comando e programas de automação de tarefas.
+- SQLite
+    > Biblioteca de linguagem C que implementa um mecanismo de banco de dados SQL pequeno, rápido, independente, de alta confiabilidade e recursos completos. SQLite é o mecanismo de banco de dados mais usado no mundo. O SQLite está integrado em todos os telefones celulares e na maioria dos computadores, e vem integrado em inúmeros outros aplicativos que as pessoas usam todos os dias
 
 ### Requisitos para a compilação do projeto:
 - Instalação IDE visual studio:
@@ -21,7 +27,6 @@ mostra o desenho arquitetural de alto nível acima. Este projeto será subdividi
     > npm install typescript ts-node nodemon @types/node @types/express --save-dev
 - Instalação NestJs:
     > npm i -g @nestjs/cli
-- ...  
 
 ### Instruções para a execução do projeto:
 - Abrir a IDE do Visual Studio;
@@ -34,3 +39,9 @@ mostra o desenho arquitetural de alto nível acima. Este projeto será subdividi
 _Entrega 01:_
 - Criação do projeto;
 - Criação dos modulos de **projects**, **tasks** e **users**.
+
+_Entrega 02:_
+- Configuração da base de dados SQLite;
+- Implementação dos controladores, repositórios, serviços e DTOs para a entidade _Projects_;
+- Implementação dos controladores, repositórios, serviços e DTOs para a entidade _Tasks_;
+- Criação da persistência de dados para as entidades _Projects_ e _Tasks_.
