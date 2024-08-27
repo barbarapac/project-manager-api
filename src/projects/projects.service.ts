@@ -4,12 +4,16 @@ import { Project } from './entities/project.entity';
 import { Repository } from 'typeorm';
 import { CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
+import { PageService } from 'src/helpers/pagination/page/page.service';
+import { FilterDto } from 'src/helpers/pagination/dto/filter.dto';
 
 @Injectable()
 export class ProjectsService {
   constructor(
     @InjectRepository(Project)
     private readonly projectRepository : Repository<Project>,
+    
+    private readonly pageService : PageService,
   ){}
 
   create(createProjectDto: CreateProjectDto) {
@@ -29,6 +33,17 @@ export class ProjectsService {
     });
   }
 
+  findAllPaginated(filter?: FilterDto) {
+    if (!filter) {
+      return this.findAll();
+    }
+
+    return this.pageService.paginate(this.projectRepository, {    
+      page: filter.page,    
+      pageSize: filter.pageSize,
+    });
+  }
+
   update(id: number, updateProjectDto: UpdateProjectDto) {
     return this.projectRepository.update(id, updateProjectDto);
   }
@@ -36,8 +51,4 @@ export class ProjectsService {
   remove(id: number) {
     return this.projectRepository.delete(id);
   }
-
-  // findOneByOrFail(id: number){
-  //   return this.projectRepository.findOneByOrFail({ id });
-  // }
 }

@@ -5,6 +5,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Task } from './entities/task.entity';
 import { Project } from 'src/projects/entities/project.entity';
+import { FilterDto } from 'src/helpers/pagination/dto/filter.dto';
+import { PageService } from 'src/helpers/pagination/page/page.service';
 
 @Injectable()
 export class TasksService {
@@ -15,6 +17,8 @@ export class TasksService {
 
     @InjectRepository(Project)
     private readonly projectRepository: Repository<Project>,
+    
+    private readonly pageService : PageService,
   ){}
 
   async create(createTaskDto: CreateTaskDto) {
@@ -31,6 +35,17 @@ export class TasksService {
   findOne(id: number) {
     return this.taskRepository.findOne({
       where : { id },
+    });
+  }
+
+  findAllPaginated(filter?: FilterDto) {
+    if (!filter) {
+      return this.findAll();
+    }
+
+    return this.pageService.paginate(this.taskRepository, {    
+      page: filter.page,    
+      pageSize: filter.pageSize,
     });
   }
 
