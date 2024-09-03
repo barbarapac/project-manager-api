@@ -14,6 +14,7 @@ mostra o desenho arquitetural de alto nível acima. Este projeto será subdividi
 
 ![alt text](image.png)
 
+
 ### Tecnologias utilizadas:
 - Node.js
     > Node.js é uma ambiente de execução de JavaScript disponível para várias plataformas, de código aberto e gratuita, que permite os programadores criar servidores, aplicações da Web, ferramentas de linha de comando e programas de automação de tarefas.
@@ -82,17 +83,25 @@ mostra o desenho arquitetural de alto nível acima. Este projeto será subdividi
 
 ### Entregas:
 
-_Entrega 01:_
+_Entrega 01: Criação inicial do projeto_
 - Criação do projeto;
 - Criação dos modulos de **projects**, **tasks** e **users**.
 
-_Entrega 02:_
+_Entrega 02: Cadastro de projetos e tarefas_
 - Configuração da base de dados SQLite;
 - Implementação dos controladores, repositórios, serviços e DTOs para a entidade _Projects_;
 - Implementação dos controladores, repositórios, serviços e DTOs para a entidade _Tasks_;
 - Criação da persistência de dados para as entidades _Projects_ e _Tasks_.
 
-_Entrega 03:_
-- Implementação de modulo helper para busca paginada;
+_Entrega 03: Paginação e cache com redis_
+- Implementação de módulo helper para busca paginada;
 - Implementação de consulta paginada para listagem de _Projects_ e _Tasks_;
 - Implementada estratégia de cache com uma instância local do Redis.
+
+_Entrega 04: Fluxo de autenticação_
+
+![alt text](image-1.png)
+
+- Implementação de módulos de autenticação e usuários;
+- Implementação entidade Usuário;
+- Implementação do serviço de autenticação com JWT. 
