@@ -105,3 +105,7 @@ _Entrega 04: Fluxo de autenticação_
 - Implementação de módulos de autenticação e usuários;
 - Implementação entidade Usuário;
 - Implementação do serviço de autenticação com JWT. 
+
+_Entegra final: documentação e testes_
+ - Implementação de documentação com Swagger;
+ - Introdução a testes com Jest
